@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown with Sentence</title>
+</head>
+<body>
+    <h1 id="countdown"></h1>
+
+    <script>
+        let count = 20; // Start number
+        const countdownElement = document.getElementById("countdown");
+
+        const timer = setInterval(() => {
+            if (count > 0) {
+                countdownElement.textContent = `The event will start in ${count} seconds...`;
+            } else {
+                clearInterval(timer);
+                countdownElement.textContent = "The event has started!";
+            }
+            count--;
+        }, 1000);
+    </script>
+</body>
+</html>
