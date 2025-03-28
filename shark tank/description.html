@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Description</title>
+    <style>
+        .card {
+            border: solid 1px black;
+            width: 200px;
+            margin: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1 id="title"></h1>
+        <img src="" id="image">
+        <p id="update-pitch-category">Category: </p>
+        <p id="founder">Founder: </p>
+        <h4 id="price">Price: </h4>
+        <button id="delete-btn">Delete</button>
+        <button><a href="#" id="edit-link">Edit</a></button>
+      <a href="cart.html" > <button id="add-to-cart" >Add to Cart</button></a>
+    </div>
+</body>
+<script>
+    let alldata = new URLSearchParams(window.location.search);
+
+    document.getElementById("title").innerText = alldata.get("title") || "No Title";
+    document.getElementById("image").src = alldata.get("image") || "";
+    document.getElementById("update-pitch-category").innerText = "Category: " + (alldata.get("category") || "N/A");
+    document.getElementById("founder").innerText = "Founder: " + (alldata.get("founder") || "N/A");
+    document.getElementById("price").innerText = "Price: " + (alldata.get("price") || "N/A");
+
+    let pitchId = alldata.get("id");
+    if (pitchId) {
+        document.getElementById("edit-link").href = `edit.html?id=${pitchId}`;
+    }
+
+    // 🛒 ADD TO CART FUNCTIONALITY
+    document.getElementById("add-to-cart").addEventListener('click', (event) => {
+        event.preventDefault();  // Prevent any default action (like navigating away)
+
+        let AddToCartData = {
+            title: alldata.get("title"),
+            image: alldata.get("image"),
+            founder: alldata.get("founder"),
+            category: alldata.get("category"),
+            price: alldata.get("price"),
+        };
+
+        console.log("Adding to Cart:", AddToCartData);
+
+        fetch('http://localhost:3000/cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(AddToCartData),
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert("Product added to cart successfully!");
+                console.log("Cart Data:", data);
+            })
+            .catch(err => {
+                alert("Error adding product to cart.");
+                console.error("Error:", err);
+            });
+    });
+</script>
+
+
+</html>
