@@ -1,0 +1,84 @@
+{
+    "covid": [
+      {
+        "id": 1,
+        "country": "USA",
+        "totalCases": 35000000,
+        "totalDeaths": 600000,
+        "totalRecovered": 34000000,
+        "activeCases": 400000
+      },
+      {
+        "id": 2,
+        "country": "India",
+        "totalCases": 32000000,
+        "totalDeaths": 450000,
+        "totalRecovered": 31000000,
+        "activeCases": 500000
+      },
+      {
+        "id": 3,
+        "country": "Brazil",
+        "totalCases": 22000000,
+        "totalDeaths": 610000,
+        "totalRecovered": 21000000,
+        "activeCases": 900000
+      },
+      {
+        "id": 4,
+        "country": "Russia",
+        "totalCases": 7000000,
+        "totalDeaths": 190000,
+        "totalRecovered": 6700000,
+        "activeCases": 100000
+      },
+      {
+        "id": 5,
+        "country": "UK",
+        "totalCases": 9000000,
+        "totalDeaths": 140000,
+        "totalRecovered": 8700000,
+        "activeCases": 200000
+      },
+      {
+        "id": 6,
+        "country": "France",
+        "totalCases": 7000000,
+        "totalDeaths": 115000,
+        "totalRecovered": 6800000,
+        "activeCases": 90000
+      },
+      {
+        "id": 7,
+        "country": "Germany",
+        "totalCases": 6500000,
+        "totalDeaths": 120000,
+        "totalRecovered": 6300000,
+        "activeCases": 80000
+      },
+      {
+        "id": 8,
+        "country": "Italy",
+        "totalCases": 5000000,
+        "totalDeaths": 130000,
+        "totalRecovered": 4900000,
+        "activeCases": 70000
+      },
+      {
+        "id": 9,
+        "country": "Japan",
+        "totalCases": 2000000,
+        "totalDeaths": 18000,
+        "totalRecovered": 1950000,
+        "activeCases": 20000
+      },
+      {
+        "id": 10,
+        "country": "Australia",
+        "totalCases": 1500000,
+        "totalDeaths": 30000,
+        "totalRecovered": 1400000,
+        "activeCases": 70000
+      }
+    ]
+  }
